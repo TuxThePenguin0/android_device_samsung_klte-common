@@ -1044,3 +1044,13 @@ on property:persist.sys.ssr.restart_level=3
 
 on property:service.bootanim.exit=1
     #write /sys/module/rmnet_usb/parameters/dump_ctrl_msg 2
+
+on property:init.svc.sensorservice=running
+    start unblock_wakelock
+
+service unblock_wakelock /system/bin/sh /system/etc/unblock_wakelock.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot

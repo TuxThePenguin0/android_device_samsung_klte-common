@@ -147,6 +147,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+   
+# Ubuntu Touch
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sensors.wl_dis=true
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/rootdir/etc/unblock_wakelock.sh:system/etc/unblock_wakelock.sh
 
 # common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
