@@ -310,7 +310,6 @@ lib/hw/sensors.msm8974.so|48c6112bc4097e9176fcd53bf3f7ba0d643b27aa
 lib/libhr.so
 
 # Time services
--app/TimeService/TimeService.apk
 bin/time_daemon
 vendor/lib/libTimeService.so
 -vendor/lib/libtime_genoff.so
